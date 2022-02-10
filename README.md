@@ -41,8 +41,10 @@ sudo rm -rf ~/.kube
 And restart the computer.
 ### Problem 4
 How to changes Internal-IP for kubernetes master and worker nodes? \
-Open the /etc/systemd/system/kubelet.service.d/10-kubeadm.conf file in each node and then add --node-ip=<master or worker node ip > to it. For Example Internal-IP is 192.168.1.1
-  
+Open the /etc/systemd/system/kubelet.service.d/10-kubeadm.conf file in each node and then add --node-ip=<master or worker node ip > to it. For Example My Internal-IP is 192.168.1.2
+Add --node-ip=192.168.1.2 to the end of the Environment =... line.
+ 
+ 
   
  ![image](https://user-images.githubusercontent.com/87664653/153404157-5a4010f0-61e5-4235-94ee-2c40c9e4ed7c.png)
   
