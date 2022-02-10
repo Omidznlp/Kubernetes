@@ -54,3 +54,19 @@ And then execute the following commands:
  sudo systemctl daemon-reload
  sudo systemctl restart kubelet
  ```
+## Problem 5
+How to fix Kubernetes stuck in ContainerCreating?
+
+For me, it happened because I forgot to deploy a pod network to the cluster.
+
+I used the https://docs.projectcalico.org/manifests/calico.yaml file.Therefore, I executed the following command. 
+ ```
+ sudo kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+ ```
+The status of my PODES is then changed to "Running."
+ 
+ you can find the other pod network files here. 
+ 
+ https://kubernetes.io/docs/concepts/cluster-administration/networking/
+ 
+ 
