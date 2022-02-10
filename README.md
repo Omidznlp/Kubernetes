@@ -63,9 +63,9 @@ I used the https://docs.projectcalico.org/manifests/calico.yaml file.Therefore, 
  ```
  sudo kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
  ```
-The status of my PODES is then changed to "Running."
+The status of my Pods is then changed to "Running."
  
- you can find the other pod network files here. 
+The other network model can be found at the following link.
  
  https://kubernetes.io/docs/concepts/cluster-administration/networking/
  
