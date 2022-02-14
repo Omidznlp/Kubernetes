@@ -1,6 +1,6 @@
 # Kubernetes
 This repository contains information on how to install, setup, and debug Kubernetes.
-Give me a star :) if this repository helps you to solve the problem.
+
 ## Troubelshooting
 ### Problem 1:\
 How to fix "kubeadm init shows kubelet isn't running or healthy"?
@@ -70,3 +70,4 @@ The other network model can be found at the following link.
  https://kubernetes.io/docs/concepts/cluster-administration/networking/
  
  
+ Give me a star :) if this repository helps you to solve the problem.
