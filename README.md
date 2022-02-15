@@ -35,7 +35,7 @@ sudo systemctl enable docker
 8. Verfiy installation
 ```
 docker ––version
-``
+```
 Read more information about the commands at the following link:
 
 https://docs.docker.com/engine/install/ubuntu/
