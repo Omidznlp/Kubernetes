@@ -1,7 +1,7 @@
 # Kubernetes
 This repository contains information on how to install, setup, and debug Kubernetes.
 ## Installation
-### Docker Installation on ubuntu
+### Docker Installation on Ubuntu
 Install Docker on the master and worker nodes.
 1.
 ```
@@ -39,8 +39,9 @@ docker ––version
 Read more information about the commands at the following link:
 
 https://docs.docker.com/engine/install/ubuntu/
-### kubernetes installation on ubuntu
+### kubernetes Installation on Ubuntu
 
+It is coming soon.
 
 ## Troubelshooting
 ### Problem 1:\
