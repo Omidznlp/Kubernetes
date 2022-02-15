@@ -1,7 +1,8 @@
 # Kubernetes
 This repository contains information on how to install, setup, and debug Kubernetes.
 ## Installation
-### Docker Installation 
+### Docker Installation on ubuntu
+Install Docker on the master and worker nodes.
 1.
 ```
 sudo apt-get update
@@ -27,9 +28,19 @@ sudo apt-get update
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
+7.
+```
+sudo systemctl enable docker 
+```
+8. Verfiy installation
+```
+docker ––version
+``
 Read more information about the commands at the following link:
 
 https://docs.docker.com/engine/install/ubuntu/
+### kubernetes installation on ubuntu
+
 
 ## Troubelshooting
 ### Problem 1:\
