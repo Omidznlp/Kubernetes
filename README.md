@@ -43,7 +43,7 @@ https://docs.docker.com/engine/install/ubuntu/
 
 It is coming soon.
 
-## Troubelshooting
+## Kubernetes Troubleshooting
 ### Problem 1:\
 How to fix "kubeadm init shows kubelet isn't running or healthy"?
 or 
