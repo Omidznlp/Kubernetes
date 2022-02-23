@@ -45,8 +45,8 @@ It is coming soon.
 
 ## Kubernetes Troubleshooting
 ### Problem 1:\
-How to fix "kubeadm init shows kubelet isn't running or healthy"?
-or 
+How to fix "kubeadm init shows kubelet isn't running or healthy"? \
+or \
 How to fix "The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp 127.0.0.1:10248: connect: connection refused." ? 
 ```
 sudo swapoff -a
