@@ -111,5 +111,21 @@ The other network model can be found at the following link.
  
  https://kubernetes.io/docs/concepts/cluster-administration/networking/
  
- 
+  ### Problem 6
+  
+How to fix "MountVolume.SetUp failed for volume "kube-api-access-xjtgm" : object "default"/"kube-root-ca.crt" not registered"
+ Add automountServiceAccountToken: false to pod creation yaml file
+'''
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pv-pod
+spec:
+  automountServiceAccountToken: false
+  restartPolicy: Never
+  containers:
+    - name: busybox
+      image: busybox
+...  
+'''
  Give me a star :) if this repository helps you to solve the problem.
