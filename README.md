@@ -2,8 +2,7 @@
 This repository contains information on how to install, setup, and debug Kubernetes.
 ## Installation
 ### Docker Installation on Ubuntu
-Install Docker on the master and worker nodes.
-1.
+1.Install Docker on the master and worker nodes.
 ```
 sudo apt-get update
 ```
@@ -40,9 +39,55 @@ Read more information about the commands at the following link:
 
 https://docs.docker.com/engine/install/ubuntu/
 ### kubernetes Installation on Ubuntu
+1.
+```
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+br_netfilter
+EOF
 
-It is coming soon.
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+sudo sysctl --system
+```
+2.
+```
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl
+```
+3.
+```
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+``
+4.
+```
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
+```
+5.
+```
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+6.
+```
+sudo swapoff -a
+sudo sed -i '/ swap / s/^/#/' /etc/fstab
+```
+7.
+```
+Create this file "daemon.json" in the directory "/etc/docker" and add the following
+{
+"exec-opts": ["native.cgroupdriver=systemd"]
+}
+```
+8.
+```
+sudo systemctl restart docker
+sudo kubeadm reset
+```
 ## Kubernetes Troubleshooting
 ### Problem 1:\
 How to fix "kubeadm init shows kubelet isn't running or healthy"? \
@@ -62,9 +107,10 @@ sudo systemctl restart docker
 sudo kubeadm reset
 and then Initialize or join command 
 kubeadm init ... 
-or 
-kubeadm join
 ```
+FYI,
+https://phoenixnap.com/kb/install-kubernetes-on-ubuntu
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 ### Problem 2
 how to fix "The connection to the server localhost:8080 was refused - did you specify the right host or port"?
 ```
