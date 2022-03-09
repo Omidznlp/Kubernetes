@@ -88,6 +88,11 @@ Create this file "daemon.json" in the directory "/etc/docker" and add the follow
 sudo systemctl restart docker
 sudo kubeadm reset
 ```
+FYI,
+https://phoenixnap.com/kb/install-kubernetes-on-ubuntu
+
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+
 ## Kubernetes Troubleshooting
 ### Problem 1:\
 How to fix "kubeadm init shows kubelet isn't running or healthy"? \
@@ -108,9 +113,6 @@ sudo kubeadm reset
 and then Initialize or join command 
 kubeadm init ... 
 ```
-FYI,
-https://phoenixnap.com/kb/install-kubernetes-on-ubuntu
-https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 ### Problem 2
 how to fix "The connection to the server localhost:8080 was refused - did you specify the right host or port"?
 ```
