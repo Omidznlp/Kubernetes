@@ -275,7 +275,7 @@ spec:
   
  Problem 7
  How to fix the following problem?
- sudo kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml?
+ sudo kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml? \
  The connection to the server localhost:8080 was refused - did you specify the right host or port?
  ```
  mkdir -p $HOME/.kube
