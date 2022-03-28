@@ -88,7 +88,7 @@ Create this file "daemon.json" in the directory "/etc/docker" and add the follow
 sudo systemctl restart docker
 sudo kubeadm reset
 ```
-9.
+9. The following procedure should only be applied on the master node, and only the "kubeadm join" command should be executed on worker nodes. 
 ```
 sudo kubeadm init --pod-network-cidr=10.10.0.0/16 --apiserver-advertise-address=<The IP address of your master node can be used by worker nodes to connect to it for example:192.168.1.5>
 
