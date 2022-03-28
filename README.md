@@ -90,7 +90,7 @@ sudo kubeadm reset
 ```
 9.
 ```
-sudo kubeadm init --pod-network-cidr=10.10.0.0/16
+sudo kubeadm init --pod-network-cidr=10.10.0.0/16 --apiserver-advertise-address=<The IP address of your master node can be used by worker nodes to connect to it for example:192.168.1.5>
 
 [init] Using Kubernetes version: v1.23.5
 [preflight] Running pre-flight checks
@@ -161,6 +161,8 @@ Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
   https://kubernetes.io/docs/concepts/cluster-administration/addons/
 
 Then you can join any number of worker nodes by running the following on each as root:
+kubeadm join 192.168.1.5:6443 --token qp794c.xbsi5nanw2u9sn9x \
+	--discovery-token-ca-cert-hash sha256:355a4ca26e908ddc939b8476377f17d1133a80132eab7db07655f6fa2bacd6e2 
 
 ```
 10.
@@ -169,7 +171,7 @@ Then you can join any number of worker nodes by running the following on each as
   sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
-11. deploy the pod
+11. To deploy the Network model
 ```
 sudo kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
@@ -180,7 +182,7 @@ The other network model can be found at the following link.\
 12. To join worker nodes to the cluster, please insert the following command in the worker nodes. 
 
 ```
-kubeadm join 10.0.2.15:6443 --token qp794c.xbsi5nanw2u9sn9x \
+kubeadm join 192.168.1.5:6443 --token qp794c.xbsi5nanw2u9sn9x \
 	--discovery-token-ca-cert-hash sha256:355a4ca26e908ddc939b8476377f17d1133a80132eab7db07655f6fa2bacd6e2 
 ```
 
