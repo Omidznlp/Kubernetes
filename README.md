@@ -76,9 +76,8 @@ sudo apt-mark hold kubelet kubeadm kubectl
 sudo swapoff -a
 sudo sed -i '/ swap / s/^/#/' /etc/fstab
 ```
-7.
+7. Create this file "daemon.json" in the directory "/etc/docker" and add the following
 ```
-Create this file "daemon.json" in the directory "/etc/docker" and add the following
 {
 "exec-opts": ["native.cgroupdriver=systemd"]
 }
@@ -91,7 +90,9 @@ sudo kubeadm reset
 9. The following procedure should only be applied on the master node, and only the "kubeadm join" command should be executed on worker nodes. 
 ```
 sudo kubeadm init --pod-network-cidr=10.10.0.0/16 --apiserver-advertise-address=<The IP address of your master node can be used by worker nodes to connect to it for example:192.168.1.5>
-
+```
+Seeing the following lines at the terminal
+```
 [init] Using Kubernetes version: v1.23.5
 [preflight] Running pre-flight checks
 [preflight] Pulling images required for setting up a Kubernetes cluster
