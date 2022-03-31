@@ -1,8 +1,9 @@
 # Kubernetes
-This repository contains information on how to install, setup, and debug Kubernetes.
+This repository contains information on how to install, setup, and debug Docker and Kubernetes.
 ## Installation
 ### Docker Installation on Ubuntu
-1.Install Docker on the master and worker nodes.
+Install Docker on the master and worker nodes.\
+1.
 ```
 sudo apt-get update
 ```
@@ -39,6 +40,7 @@ Read more information about the commands at the following link:
 
 https://docs.docker.com/engine/install/ubuntu/
 ### kubernetes Installation on Ubuntu
+Install kubernetes on the master and worker nodes.\
 1.
 ```
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
